@@ -1,0 +1,89 @@
+body{
+    margin:0px;
+    padding:0px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    height:100vh; 
+ }
+
+ #gameboard{
+         width:300px;
+         height:300px;
+         background-color: black;
+         display:flex;
+         flex-wrap:wrap;
+         border: 1px solid black;
+ }
+
+ .square{
+    width:100px;
+    height:100px;
+    background-color: white;
+    border:2px solid black;
+    box-sizing: border-box;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .circle{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:14px solid #ffb3ff;       /*ff80ff  00ffff*/
+    box-sizing: border-box; 
+}
+.cross{
+    width:90px;
+    height:90px;
+    position:relative;
+    transform: rotate(45deg);
+}
+
+.cross:before,.cross:after{
+    content:"";
+    position:absolute;
+    background-color:#00ffff;
+}
+.cross:before{
+    left:50%;
+    width:30%;
+    margin-left:-15%;
+    height:100%;
+}
+.cross:after{
+    top:50%;
+    height:30%;
+    margin-top:-15%;
+    width:100%;
+}
+#info{
+    font-weight: bold;
+    font-size: 20px;
+}
+.header{
+    position: relative;
+    animation: animate 5s linear 2s infinite alternate-reverse;
+}
+@keyframes animate{
+    0%{
+        color:#a1d4d4;
+    }
+    20%{
+        color:#00ffff;
+    }
+    40%{
+        color:rgb(9, 120, 148);
+    }
+    60%{
+        color:#ffb3ff;
+    }
+    80%{
+        color:#ff80ff;
+    }
+    100%{
+        color:#dd03dd;
+    }
+}
